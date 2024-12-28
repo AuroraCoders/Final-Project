@@ -85,7 +85,9 @@ Route::put('/products/update/{id}', [ProductController::class, 'update'])->name(
 
 Route::resource('products', ProductController::class);
 
+
 Route::get('/paintings',[PaintController::class,'index']);
+
 
 Route::get('/index',[HomeController::class,'index']);
 
@@ -105,7 +107,9 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-
+Route::get('/vase', function () {
+    return view('frontend.vase');
+})->name('vase');
 
 Route::get('/painting', function () {
     return view('frontend.painting');
@@ -182,6 +186,18 @@ Route::get('/F3', function () {
 Route::get('/F4', function () {
     return view('frontend.F4');
 })->name('F4');
+
+Route::get('/v1', function () {
+    return view('frontend.v1');
+})->name('v1');
+
+Route::get('/v2', function () {
+    return view('frontend.v2');
+})->name('v2');
+
+Route::get('/v3', function () {
+    return view('frontend.v3');
+})->name('v3');
 
 
 Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('addToCart');
