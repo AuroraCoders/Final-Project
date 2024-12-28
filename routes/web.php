@@ -225,3 +225,4 @@ Route::resource('users', UserController::class);
 Route::post('/chat', [ChatController::class, 'chat']);
 
 Route::get('/download/{file}', [ProductController::class, 'download'])->name('file.download');
+
