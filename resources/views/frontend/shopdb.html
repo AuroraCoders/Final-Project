@@ -1,0 +1,266 @@
+@extends('layout')
+
+<!-- DataTable CSS -->
+<link href="{{ asset('css/shop.css') }}" rel="stylesheet">
+<link href="{{ asset('css/Styles.css') }}" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- DataTables CSS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+<style>
+    /* Add custom styling here */
+    .table-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .product-table {
+        width: 90%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        table-layout: auto;
+    }
+
+    .product-table th, .product-table td {
+        padding: 15px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    .product-table th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+
+    .product-image {
+        padding-right: 10px;
+    }
+
+    .product-name {
+        padding-left: 30px;
+    }
+
+    .product-image img {
+        max-width: 100%;
+        height: auto;
+        margin-right: 20px;
+        border-radius: 8px;
+    }
+
+    .product-name a {
+        color: rgb(9, 10, 10);
+        text-decoration: none;
+    }
+
+    .product-name a:hover {
+        text-decoration: underline;
+    }
+
+    .product-detail p {
+        margin: 0;
+        font-size: 1em;
+        color: #555;
+    }
+
+    .product-actions .btn {
+        padding: 8px 12px;
+        border-radius: 5px;
+        font-size: 0.9em;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+    }
+
+    .product-actions .btn-warning {
+        background-color: #f0ad4e;
+        color: white;
+    }
+
+    .product-actions .btn-warning:hover {
+        background-color: #ec971f;
+    }
+
+    .product-actions .btn-danger {
+        background-color: #d9534f;
+        color: white;
+    }
+
+    .product-actions .btn-danger:hover {
+        background-color: #c9302c;
+    }
+
+    hr {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 1px solid #e0e0e0;
+    }
+
+    .table-scroll {
+        max-height: 500px;
+        overflow-y: auto;
+        width: 100%;
+    }
+</style>
+
+@section('content')
+<header class="text-center py-5">
+    <h1 class="display-4">Explore Our Exclusive Collection of Home Decor</h1>
+    <p class="lead">Beautifully crafted, unique, and elegant pieces for every home.</p>
+</header>
+
+
+<center>
+    <h2 class="mb-4" style="margin-top:20px;">Our Products</h2>
+    <div class="table-container" style="margin-top:50px;">
+        <div class="table-scroll">
+            <table id="productTable" class="product-table">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Details</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($products as $product)
+                        <tr class="product-item">
+                            <td class="product-image">
+                                <img src="{{ asset('storage/' . $product->image_path) }}" alt="{{ $product->name }}" width="150">
+                            </td>
+                            <td class="product-name">
+                                <a href="{{ route('products.show', $product->id) }}">{{ $product->name }}</a>
+                            </td>
+                            <td class="product-detail">
+                                <p>{{ Str::limit($product->detail, 100) }}</p>
+                            </td>
+                            <td class="product-actions">
+                                <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning">Edit</a>
+                                <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display:inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+</center>
+
+
+
+
+
+
+<!-- Call to Action Section -->
+<div class="container-fluid bg-light py-5 text-center">
+    <h2 class="display-5">Transform Your Space with Our Premium Decor</h2>
+    <p class="lead">Browse through our collection and find the perfect piece for your home.</p>
+</div>
+<!-- Category Cards Section -->
+<div class="row">
+        <!-- Category 1 -->
+        <div class="col-md-3">
+            <div class="category-card">
+                <img src="{{ asset('images/p4.png') }}" alt="Paintings" style="height:260px">
+                <div class="overlay">
+                    <p>Category</p>
+                    <h5>PAINTINGS</h5>
+                    <button class="btn btn-light mt-2"><a  href="{{ 'painting' }}" style="color:black;text-decoration:none;">Explore</a></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 2 -->
+        <div class="col-md-3">
+            <div class="category-card">
+                <img src="{{ asset('images/l4.jpeg') }}" alt="Drawings" style="height:260px">
+                <div class="overlay">
+                    <p>Category</p>
+                    <h5>LAMPS</h5>
+                    <button class="btn btn-light mt-2"><a  href="{{ 'lamp' }}" style="color:black; text-decoration:none;">Explore</a></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 3 -->
+        <div class="col-md-3">
+            <div class="category-card">
+                <img src="{{ asset('images/f5.jpeg') }}" alt="Mandalas" style="height:260px">
+                <div class="overlay">
+                    <p>Category</p>
+                    <h5>FURNITURE</h5>
+                    <button class="btn btn-light mt-2"><a  href="{{ 'furniture' }}" style="color:black;text-decoration:none;">Explore</a></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 4 -->
+        <div class="col-md-3">
+            <div class="category-card">
+                <img src="{{ asset('images/s5.jpeg') }}" alt="Calligraphy" style="height:260px">
+                <div class="overlay">
+                    <p>Category</p>
+                    <h5>SCULPTURES</h5>
+                    <button class="btn btn-light mt-2"><a  href="{{ 'sculpture' }}" style="color:black;text-decoration:none;">Explore</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+<!-- Footer Section -->
+<footer class="footer bg-dark text-white py-5" style="color:red">
+    <div class="container" style="height:150px">
+        <!-- About Section -->
+        <div class="col-md-4">
+            <h5>About Us</h5>
+            <p class="text-muted">
+                Transforming spaces with curated interior decor that suits your style. Quality craftsmanship and timeless design to inspire your home.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-4" style="margin-left:100px">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+                <li><a href="#" class="text-decoration-none" style="color:black">Home</a></li>
+                <li><a href="#" class="text-decoration-none" style="color:black">About</a></li>
+                <li><a href="#" class="text-decoration-none" style="color:black">Products</a></li>
+                <li><a href="#" class="text-decoration-none" style="color:black">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-md-4">
+            <h5>Contact Us</h5>
+            <ul class="list-unstyled">
+                <li style="color:black"><i class="bi bi-geo-alt-fill me-2"></i>123 Decor Street, City, Country</li>
+                <li style="color:black"><i class="bi bi-envelope-fill me-2"></i>info@interiordecor.com</li>
+                <li style="color:black"><i class="bi bi-telephone-fill me-2"></i>+123 456 7890</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- DataTables JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#productTable').DataTable({
+            "paging": true,  // Enable pagination
+            "pageLength": 3,  // Display 3 rows per page
+            "searching": true,  // Enable search bar
+            "info": true,  // Enable info about rows
+            "lengthChange": false  // Disable the ability to change rows per page
+        });
+    });
+</script>
+
+@endsection

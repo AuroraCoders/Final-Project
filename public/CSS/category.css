@@ -1,0 +1,164 @@
+
+   /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and basic text styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Section */
+header {
+    background-color: #1c1c1c;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+header .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header .main-title {
+    font-size: 36px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+header .collection-title {
+    font-size: 18px;
+    font-style: italic;
+}
+
+/* Product Section */
+.product-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+/* Individual Product Item */
+.product-item {
+    text-align: center;
+    width: 250px;
+    position: relative;
+}
+
+.product-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Product Details */
+.product-details {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+}
+.product-details small{
+    margin-right:50px;
+}
+.product-details p{
+    margin-right:50px;
+}
+.product-price {
+    font-size: 16px;
+    color: #777;
+    margin-top: 5px;
+}
+
+.product-button {
+    background-color: #ff5c5c;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-right:40px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.product-button:hover {
+    background-color: #ff0000;
+}
+/* Footer Styles */
+/* Footer Styles */
+/* Footer Styles */
+.footer {
+    height:200px;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Logo Section */
+.footer-left {
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    max-height: 150px;
+}
+
+/* Center Navigation Links */
+.footer-center {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.footer-center a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.footer-center a:hover {
+    color: #00aaff;
+}
+
+/* Social Media Icons */
+.footer-right {
+    text-align: center;
+}
+
+.footer-right a {
+    color: #fff;
+    margin-left: 15px;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-right a:hover {
+    color: #00aaff;
+}
+
+
