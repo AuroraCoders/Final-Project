@@ -98,12 +98,13 @@
 
     <section class="sliding-text">
         <div class="text-wrapper">
-            <p class="sliding-content">
-                Unleash Your Creativity with Our Premium Stationery Collection! &nbsp;
-                From School Supplies to Office Essentials – We Have It All! &nbsp;
-                Exclusive Discounts on Top Stationery Brands – Shop Now! &nbsp;
-                Your One-Stop Shop for Quality Fine Arts and Stationery! &nbsp;
-            </p>
+        <p class="sliding-content">
+    Transform Your Space with Our Exquisite Home Décor Collection! &nbsp;
+    From Timeless Furniture to Unique Accents – We Have It All! &nbsp;
+    Exclusive Deals on Handcrafted and Luxurious Pieces – Shop Now! &nbsp;
+    Create Your Dream Home with Our Stylish Décor Solutions! &nbsp;
+</p>
+
         </div>
     </section>
     <br>
