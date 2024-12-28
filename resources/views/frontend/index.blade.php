@@ -1,4 +1,3 @@
-
 @extends('layout')
 
 @section('title', 'Home Decor')
@@ -14,7 +13,12 @@
       integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-     
+      <div class ="chat">
+      <a href="https://wa.me/+923117175082?text=I'm%20interested%20in%20your%20car%20for%20sale" target="_blank">
+    <img src="{{url('images/wat.jpg')}}" alt="wattsapp" style="height:50px; width:50px; bottom:20px; left:20px; position:fixed; z-index:1000;">
+</a>
+
+<div>
 
 <!-- Carousel -->
 <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
