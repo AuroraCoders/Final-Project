@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Default Title')</title>
-    <link href="{{ asset('css/header.css') }}" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-</head>
-<body>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="{{ asset('CSS/header.css') }}" />
+
+
     <!-- Middle Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light navbar-middle py-3">
         <a class="navbar-brand" href="#">
@@ -64,12 +58,63 @@
             </div>
         </div>
     </nav>
+ <!-- Bottom Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-dark py-2" style="background-color:rgb(252, 252, 252);">
+        <div class="container3" >
+            <div class="row justify-content-center">
+                <div class="col-6 col-md-4 col-lg-2 category-card2 ">
+                    <a href="{{url('painting')}}" >
+                        <img src="{{url('images/p2.png')}}" alt="paintings">
+                    </a>
+                    <p style="margin-left:30px;">PAINTINGS</p>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 category-card2">
+                <a href="{{url('lamp')}}">
+                    <img src="{{url('images/l6.jpeg')}}" alt="lamps">
+                    </a>
+                    <p style="margin-left:50px;">LAMPS</p>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 category-card2">
+                <a href="{{url('furniture')}}">
+                    <img src="{{url('images/f9.jpeg')}}" alt="FURNITURE">
+                    </a>
+                    <p style="margin-left:40px;">FURNITURE</p>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 category-card2">
+                <a href="{{url('sculpture')}}">
+                    <img src="{{url('images/s9.jpeg')}}" alt="SCULPTURES">
+                    </a>
+                    <p style="margin-left:30px;">SCULPTURES</p>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 category-card2">
+                <a href="{{url('vase')}}">
+                    <img src="{{url('images/V5.jpeg')}}" alt="Pen and Pencils">
+                    </a>
+                    <p style="margin-left:50px;">VASES</p>
+                </div>
+            </div>
+        </div>
+    </nav>
 
+    <section class="sliding-text">
+        <div class="text-wrapper">
+            <p class="sliding-content">
+                Unleash Your Creativity with Our Premium Stationery Collection! &nbsp;
+                From School Supplies to Office Essentials – We Have It All! &nbsp;
+                Exclusive Discounts on Top Stationery Brands – Shop Now! &nbsp;
+                Your One-Stop Shop for Quality Fine Arts and Stationery! &nbsp;
+            </p>
+        </div>
+    </section>
+    <br>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Content Section -->
     <div class="content">
         @yield('content')
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
