@@ -58,9 +58,10 @@
     .text-secondary {
         color: #6c757d !important;
     }
-    .container{
-        display:flex;
-        flex-direction:column;
+
+    .container {
+        display: flex;
+        flex-direction: column;
     }
 </style>
 
@@ -77,7 +78,7 @@
 
     <div class="row mt-4">
         <!-- Manage Customers -->
-        <div class="col-md-6 mb-4">
+        <div class="col-md-4 mb-4">
             <div class="card shadow border-primary">
                 <div class="card-body" style="height:167px;">
                     <div class="d-flex align-items-center">
@@ -87,7 +88,7 @@
                         <div>
                             <h5 class="card-title text-primary">Manage Customers</h5>
                             <p class="card-text text-muted">View, add, update, or delete customer details effortlessly.</p>
-                            <a href="{{ route('users.index') }}" class="btn btn-primary" style="margin-top:20px;">Go to Users</a>
+                            <a href="{{ route('users.index') }}" class="btn btn-primary" >Go to Users</a>
                         </div>
                     </div>
                 </div>
@@ -95,7 +96,7 @@
         </div>
 
         <!-- Manage Inventory -->
-        <div class="col-md-6 mb-4">
+        <div class="col-md-4 mb-4">
             <div class="card shadow border-success">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
@@ -111,10 +112,24 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Additional Section -->
-    
-    
+        <!-- Order Management -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow border-secondary">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="icon me-3">
+                            <i class="fas fa-shopping-cart fa-3x text-secondary"></i>
+                        </div>
+                        <div>
+                            <h5 class="card-title text-secondary">Order Management</h5>
+                            <p class="card-text text-muted">Track, update, and process customer orders seamlessly.</p>
+                            <a href="{{ route('orders.index') }}"class="btn btn-secondary">Go to Orders</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection

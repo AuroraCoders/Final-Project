@@ -9,6 +9,10 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\CartController2;
+
+
+
 
 
 Route::get('/', function () {
@@ -226,3 +230,8 @@ Route::post('/chat', [ChatController::class, 'chat']);
 
 Route::get('/download/{file}', [ProductController::class, 'download'])->name('file.download');
 
+Route::get('/order', function () {
+    return view('frontend.order');
+})->name('order');
+
+Route::resource('orders', CartController2::class);
