@@ -35,9 +35,9 @@ class RegisterController extends Controller
     public function register(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email|unique:admins,email',
-            'password' => 'required|min:6|confirmed',
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:6',
             'type' => 'required|in:user,admin', // Define roles allowed
         ]);
 
@@ -47,7 +47,7 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
         ];
 
-        // Create user or admin based on the type
+        // Create user or admin based on the typez
         if ($request->type === 'user') {
             User::create($data);
         } elseif ($request->type === 'admin') {
