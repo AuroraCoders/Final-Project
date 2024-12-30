@@ -45,8 +45,8 @@ Route::get('/gpt', function () {
 // });
 
 Route::get('/index', [RegisterController::class, 'index'])->name('index')->middleware('auth');
-Route::get('/register', [RegisterController::class, 'showForm'])->name('register');
-Route::post('/register', [RegisterController::class, 'register']);
+Route::get('/register', [RegisterController::class, 'showForm'])->name('register.form');
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
 Route::post('/login', [RegisterController::class, 'processLogin'])->name('login');
 Route::post('/logout', [RegisterController::class, 'logout'])->name('logout');
 
@@ -88,6 +88,7 @@ Route::put('/products/update/{id}', [ProductController::class, 'update'])->name(
 
 
 Route::resource('products', ProductController::class);
+Route::get('/index2', [ProductController::class, 'index2'])->name('products.index2');
 
 
 Route::get('/paintings',[PaintController::class,'index']);
@@ -204,7 +205,10 @@ Route::get('/v3', function () {
 })->name('v3');
 
 
+// web.php
 Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('addToCart');
+
+
 Route::get('/cart', [CartController::class, 'showCart'])->name('cart');
 
 Route::post('/remove-from-cart/{id}', [CartController::class, 'removeFromCart'])->name('removeFromCart');

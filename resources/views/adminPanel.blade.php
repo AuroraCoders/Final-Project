@@ -124,7 +124,7 @@
                         <div>
                             <h5 class="card-title text-secondary">Order Management</h5>
                             <p class="card-text text-muted">Track, update, and process customer orders seamlessly.</p>
-                            <a href="{{ route('orders.index') }}"class="btn btn-secondary">Go to Orders</a>
+                            <a href="{{ route('products.index2') }}" class="btn btn-secondary">Go to Orders</a>
                         </div>
                     </div>
                 </div>

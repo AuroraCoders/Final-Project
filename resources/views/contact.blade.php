@@ -155,11 +155,11 @@
 <body>
 <h2 class="text-center" style="margin-top:50px;">Contact Us</h2>
 <div class="container contact-us-container" style=" height:600px;margin-top:20px;">
-    <div class="contact-section" >
+    <div class="contact-section">
         <!-- Contact Form Section -->
-        <div class="contact-item" >
+        <div class="contact-item">
             <h5 style="margin-bottom:0px;">Get in Touch</h5>
-            <form action="" method="POST">
+            <form action="" method="POST" enctype="multipart/form-data">
                 @csrf
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" placeholder="Your Name" required>
@@ -173,12 +173,16 @@
                 <label for="message">Message</label>
                 <textarea id="message" name="message" placeholder="Your Message" required></textarea>
 
+                <!-- File Upload Section -->
+                <label for="file">Upload File</label>
+                <input type="file" id="file" name="file" accept="image/*,application/pdf" required>
+
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
 
         <!-- Contact Information Section -->
-        <div class="contact-info"  style="margin-top:100px;">
+        <div class="contact-info" style="margin-top:100px;">
             <h5>Our Office</h5>
             <div class="info-item">
                 <i class="fas fa-map-marker-alt"></i>

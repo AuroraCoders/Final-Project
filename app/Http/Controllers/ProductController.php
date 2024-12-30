@@ -13,6 +13,11 @@ class ProductController extends Controller
         $products = Product::all();  // Retrieve all products
         return view('products.index', compact('products'));
     }
+    public function index2()
+    {
+        $products = Product::all();  // Retrieve all products
+        return view('products.index2', compact('products'));
+    }
     // Show the form for creating a new product
     public function create()
     {
@@ -105,5 +110,10 @@ public function download($file)
         // File not found
         return abort(404, 'File not found.');
     }
+    public function show($id)
+{
+    // Add logic if needed, or leave empty for now
+  
+}
 
 }
