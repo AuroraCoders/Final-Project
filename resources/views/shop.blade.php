@@ -188,39 +188,24 @@
       </div>
       <br>
 
-<!-- Footer Section -->
-<footer class="footer bg-dark text-white py-5" style="color:red">
-    <div class="container" style="height:150px">
-        <!-- About Section -->
-        <div class="col-md-4">
-            <h5>About Us</h5>
-            <p class="text-muted">
-                Transforming spaces with curated interior decor that suits your style. Quality craftsmanship and timeless design to inspire your home.
-            </p>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="col-md-4" style="margin-left:100px">
-            <h5>Quick Links</h5>
-            <ul class="list-unstyled">
-                <li><a href="#" class="text-decoration-none" style="color:black">Home</a></li>
-                <li><a href="#" class="text-decoration-none" style="color:black">About</a></li>
-                <li><a href="#" class="text-decoration-none" style="color:black">Products</a></li>
-                <li><a href="#" class="text-decoration-none" style="color:black">Contact</a></li>
-            </ul>
-        </div>
-
-        <!-- Contact Info -->
-        <div class="col-md-4">
-            <h5>Contact Us</h5>
-            <ul class="list-unstyled">
-                <li style="color:black"><i class="bi bi-geo-alt-fill me-2"></i>123 Decor Street, City, Country</li>
-                <li style="color:black"><i class="bi bi-envelope-fill me-2"></i>info@interiordecor.com</li>
-                <li style="color:black"><i class="bi bi-telephone-fill me-2"></i>+123 456 7890</li>
-            </ul>
-        </div>
+<footer class="footer" style="height: 300px;" >
+    <center>
+    <div class="footer-left">
+        <img src="{{ asset('images/logo.png') }}" alt="Home Decor Logo" class="footer-logo" style="height: 150px;">
     </div>
+    <div class="footer-center">
+        <a href="{{ route('home') }}">Home</a> |
+        <a href="{{ route('shop') }}">Shop</a> 
+    </div>
+    <div class="footer-right">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.pinterest.com" target="_blank"><i class="fab fa-pinterest"></i></a>
+        <a href="https://www.whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    </center>
 </footer>
+
 
 <!-- DataTables JS -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

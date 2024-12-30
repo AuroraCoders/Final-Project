@@ -8,6 +8,12 @@ class CartController extends Controller
 {
     public function addToCart(Request $request)
 {
+    if (!auth()->check()) {
+        return response()->json([
+            'status' => 'error',
+            'message' => 'Please log in to add items to the cart.'
+        ], 401); // Unauthorized
+    }
     // Assuming the data is passed in the request
     $productName = $request->input('product_name');
     $productDescription = $request->input('product_description');
